@@ -16,7 +16,7 @@
 //   // console.log(numberDecrease);
 
 // });
-function firstClass(isIncrease,id) {
+function firstClass(isIncrease,id,price) {
   const inputValue = document.getElementById(id+"-input");
   let inputNumber = parseInt(inputValue.value);
   if (isIncrease == true) {
@@ -25,6 +25,29 @@ function firstClass(isIncrease,id) {
     inputNumber = inputNumber - 1;
   }
   inputValue.value = inputNumber;
-  const total = inputValue.value * 150;
+  const total = inputValue.value * price;
+  // console.log(total);
+  totalPrice();
 }
+function getInput(ticket){
+  const ticketInput = document.getElementById(ticket+"-input");
+  const ticketNumber = parseInt(ticketInput.value);
+  return ticketNumber;
+}
+function totalPrice(){
+  const firstClassTicket = 150 * getInput('first');
+  const economyClassTicket = 100 * getInput("economy");
 
+  const subTotalPrice = firstClassTicket + economyClassTicket;
+  const taxCount = subTotalPrice * 0.1;
+  const totalPrice = subTotalPrice + taxCount;
+  
+  document.getElementById("sub-total").innerText = '$'+subTotalPrice;
+  document.getElementById("tax-count").innerText = "$" + taxCount;
+  document.getElementById("total-price").innerText = "$" + totalPrice;
+  
+
+  // const subTotal = document.getElementById("sub-total");
+  // subTotal.innerText = subTotalPrice;
+
+  }

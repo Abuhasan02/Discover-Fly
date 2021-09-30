@@ -54,7 +54,7 @@
                     <input id="first-input" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p><span id="firstPlusBtn" onclick="firstClass(true,'first')">+</span> <span onclick="firstClass(false,'first')" id="firstMinusBtn" >-</span></p>
+                    <p><span id="firstPlusBtn" onclick="firstClass(true,'first',150)">+</span> <span onclick="firstClass(false,'first',150)" id="firstMinusBtn" >-</span></p>
                 </div>
             </div>
             
@@ -64,7 +64,7 @@
                     <input id="economy-input"  class="inp-style inp-width" value="0"  type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span onclick="firstClass(true,'economy')" id="economyPlusBtn">+</span> <span onclick="firstClass(false,'economy')">-</span> </p>
+                    <p> <span onclick="firstClass(true,'economy',100)" id="economyPlusBtn">+</span> <span onclick="firstClass(false,'economy',100)">-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -73,7 +73,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p id="sub-total">$500</p>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="tax-count">$50</p>
                     </div>
                 </div>
                 <hr>
@@ -91,7 +91,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="total-price">$550</p>
                     </div>
                 </div>
             </div>
