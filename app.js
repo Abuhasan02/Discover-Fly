@@ -16,12 +16,12 @@
 //   // console.log(numberDecrease);
 
 // });
-function firstClass(isIncrease) {
-  const inputValue = document.getElementById("firstInput");
+function firstClass(isIncrease,id) {
+  const inputValue = document.getElementById(id+"-input");
   let inputNumber = parseInt(inputValue.value);
   if (isIncrease == true) {
     inputNumber = inputNumber + 1;
-  } else {
+  } else if(isIncrease==false && inputNumber>0) {
     inputNumber = inputNumber - 1;
   }
   inputValue.value = inputNumber;
