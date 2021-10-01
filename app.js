@@ -45,9 +45,21 @@ function totalPrice(){
   document.getElementById("sub-total").innerText = '$'+subTotalPrice;
   document.getElementById("tax-count").innerText = "$" + taxCount;
   document.getElementById("total-price").innerText = "$" + totalPrice;
-  
+  // bookNow(10);
+  }
+  document.getElementById("bookNow").addEventListener('click',function(){
+     const firstClassTicket = 150 * getInput("first");
+     const economyClassTicket = 100 * getInput("economy");
 
-  // const subTotal = document.getElementById("sub-total");
-  // subTotal.innerText = subTotalPrice;
-
+     const subTotalPrice = firstClassTicket + economyClassTicket;
+     const taxCount = subTotalPrice * 0.1;
+     const totalPrice = subTotalPrice + taxCount;
+     bookNow(subTotalPrice, taxCount, totalPrice);
+  });
+  function bookNow(subTotal,tax,total){
+    const bookBtn = document.getElementById("display");
+    bookBtn.style.display = "block";
+    document.getElementById("subTotal").innerText = "$" + subTotal;
+    document.getElementById("taxCount").innerText = "$" + tax;
+    document.getElementById("totalPrice").innerText = "$" + total;
   }
